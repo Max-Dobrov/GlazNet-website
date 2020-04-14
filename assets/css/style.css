@@ -1,0 +1,882 @@
+@font-face {
+    font-family: 'Galiver Sans';
+    src: local("Galiver Sans Bold"), local("Galiver-Sans-Bold"), url("GaliverSans-Bold.woff2") format("woff2"), url("GaliverSans-Bold.woff") format("woff"), url("GaliverSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Galiver Sans';
+  src: local("Galiver Sans Regular"), local("Galiver-Sans-Regular"), url("GaliverSans.woff2") format("woff2"), url("GaliverSans.woff") format("woff"), url("GaliverSans.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+  src: local("Century Gothic Regular"), local("Century-Gothic-Regular"), url("CenturyGothic.woff2") format("woff2"), url("CenturyGothic.woff") format("woff"), url("CenturyGothic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+  src: local("Century Gothic Bold"), local("Century-Gothic-Bold"), url("CenturyGothic-Bold.woff2") format("woff2"), url("CenturyGothic-Bold.woff") format("woff"), url("CenturyGothic-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Default styles */
+*,
+:before,
+:after {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    background-color: #2c2c2c;
+    font-family: 'Century Gothic';
+    color: #fff;
+}
+
+/* Blocks */
+/* container */
+.container {
+    max-width: 92%;
+    margin: 0 auto;
+    padding: 0 4rem;
+    position: relative;
+}
+
+@media (max-width: 76rem) {
+    max-width: 64rem;
+}
+
+@media (max-width: 66.1rem) {
+    max-width: 48rem;
+}
+
+@media (max-width: 51.2rem) {
+    max-width: 36rem;
+}
+
+@media (max-width: 38.4rem) {
+    max-width: none;
+}
+
+/* header */
+.header {
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+@media (max-width: 51.2rem) {
+    .header:before {
+        content: '';
+        width: 100%;
+        height: 4rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: #292929;
+    }
+}
+
+.header__inner {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 51.2rem) {
+    .header__inner {
+        display: none;
+        width: 100%;
+        height: 40%;
+        position: fixed;
+        top: 4rem;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1b1b1b;
+    }
+
+    .header__inner.active {
+        display: flex;
+    }
+}
+
+.header__burger {
+    display: none;
+    z-index: 3;
+}
+
+.header__burger:before, .header__burger:after {
+    content: '';
+    width: 100%;
+    height: 0.2rem;
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+}
+
+.header__burger-span {
+    width: 100%;
+    height: 0.2rem;
+    position: absolute;
+    left: 0;
+    top: 48%;
+    background-color: #fff;
+}
+
+.header__burger:before {
+    top: 0;
+}
+
+.header__burger:after {
+    bottom: 0;
+}
+
+@media (max-width: 51.2rem) {
+    .header__burger {
+        display: block;
+        width: 2rem;
+        height: 1.7rem;
+        position: fixed;
+        right: 3rem;
+        top: 1.2rem;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 51.2rem) {
+    .nav {
+        margin-top: 1rem;
+    }
+}
+
+.nav__item {
+    margin-right: 2rem;
+}
+
+@media (max-width: 51.2rem) {
+    .nav__item {
+        margin-right: 4rem;
+    }
+
+    .nav__item:last-child {
+        margin-right: 0;
+    }
+}
+
+.nav__link {
+    font-size: .9rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.logo__image {
+    display: block;
+    height: 2.5rem;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 51.2rem) {
+    .contacts {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.contacts__tel {
+    margin-right: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 51.2rem) {
+    .contacts__tel {
+        margin-right: 4.6rem;
+    }
+
+    .contacts__tel:last-child {
+        margin-right: 0;
+    }
+}
+
+/* insta */
+.insta {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.insta__link {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 0.6rem;
+    fill: #fff;
+}
+
+/* main */
+.main {
+    width: 100%;
+    height: 30.6rem;
+    padding: 4rem 0;
+    background: #111 url(../img/main.jpg) 75% no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+@media (max-width: 43rem) {
+    .main {
+        height: 36rem;
+        background: url(../img/main-mobile.jpg) 50% no-repeat;
+        background-size: 122%;
+    }
+}
+
+@media (max-width: 25rem) {
+    .main {
+        background-size: 135%;
+    }
+}
+
+@media (max-width: 22rem) {
+    .main {
+        background-size: 155%;
+    }
+}
+
+.main__message {
+    height: 24.7rem;
+    width: 35.8rem;
+    padding: 3rem 3rem 4.5rem 6rem;
+    position: absolute;
+    background: url(../img/main_dis.png) center no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 73rem) {
+    .main__message {
+        left: -2.1rem;
+    }
+}
+
+@media (max-width: 60rem) {
+    .main__message {
+        height: 19.7rem;
+        width: 27.8rem;
+        padding: 2rem 3rem 4.5rem 6rem;
+        top: 3rem;
+    }
+}
+
+@media (max-width: 43rem) {
+    .main__message {
+        height: 16.7rem;
+        width: 24.8rem;
+        margin: auto;
+        padding: 1.2rem 3rem 4.5rem 3rem;
+        top: 18rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 30rem) {
+    .main__message {
+        top: 18rem;
+    }
+}
+
+@media (max-width: 22rem) {
+    .main__message {
+        left: -2.7rem;
+    }
+}
+
+.main__title {
+    margin-bottom: 0.3rem;
+    font-family: 'Galiver Sans';
+    font-weight: 600;
+    font-size: 4rem;
+    color: #fff;
+}
+
+@media (max-width: 60rem) {
+    .main__title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 43rem) {
+    .main__title {
+        font-size: 2.4rem;
+    }
+}
+
+.main__sub-title {
+    margin-bottom: 0.3rem;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+@media (max-width: 60rem) {
+    .main__sub-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 43rem) {
+    .main__sub-title {
+        font-size: 1.3rem;
+    }
+}
+
+.main__text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 60rem) {
+    .main__text {
+        font-size: 0.77rem;
+    }
+}
+
+@media (max-width: 43rem) {
+    .main__text {
+        font-size: 0.83rem;
+    }
+}
+
+.main__text--underline {
+    text-decoration: underline;
+}
+
+/* catalog */
+.catalog {
+    padding: 4rem 0;
+}
+
+.catalog__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width: 50rem) {
+    .catalog__title {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 50rem) {
+    .catalog__title--br {
+        display: block;
+    }
+}
+
+.catalog__container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.catalog__btn {
+    text-align: center;
+}
+
+.card {
+    max-width: 26.6rem;
+    min-height: 20rem;
+    margin: 3rem 1rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 50rem) {
+    .card {
+        margin: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 24rem) {
+    .card {
+        margin: 2rem 1rem;
+    }
+}
+
+.card__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.card__image-wrapper {
+    max-height: 18rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+@media (max-width: 50rem) {
+    .card__image-wrapper {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.card__image {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    transform: scale(1.4);
+}
+
+@media (max-width: 50rem) {
+    .card__image {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .card__image {
+        max-width: 22rem;
+    }
+}
+
+@media (max-width: 24rem) {
+    .card__image {
+        max-width: 19rem;
+    }
+}
+
+.card__name {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card__name--uppercase {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.card__price {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.25rem 4.6rem 1.2rem;
+    border: 4px #fff solid;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: none;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #2c2c2c;
+    cursor: pointer;
+}
+
+@media (max-width: 29rem) {
+    .btn--signboard {
+        padding: 1rem 2.6rem 1rem;
+    }
+}
+
+/* hightlight */
+.hightlight {
+    width: 100%;
+    height: 33.3rem;
+    position: relative;
+    background: #2c2c2c url(../img/highlight.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.hightlight__message {
+    max-width: 38rem;
+    max-height: 11rem;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 1.8rem;
+    text-align: center;
+    background-color: #2c2c2c;
+}
+
+@media (max-width: 37rem) {
+    .hightlight__message {
+        max-width: 30rem;
+    }
+}
+
+@media (max-width: 32rem) {
+    .hightlight__message {
+        max-width: 20rem;
+    }
+}
+
+.hightlight__title {
+    margin-top: -1rem;
+    font-family: 'Galiver sans';
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+@media (max-width: 37rem) {
+    .hightlight__title {
+        margin-top: 0.1rem;
+        font-size: 3.6rem;
+    }
+}
+
+@media (max-width: 32rem) {
+    .hightlight__title {
+        font-size: 2.3rem;
+    }
+}
+
+.hightlight__subtitle {
+    margin-bottom: 1.6rem;
+    font-size: 3.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+@media (max-width: 37rem) {
+    .hightlight__subtitle {
+        margin-bottom: 0.6rem;
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 32rem) {
+    .hightlight__subtitle {
+        font-size: 1.8rem;
+    }
+}
+
+/* reviews */
+.reviews {
+    width: 100%;
+    padding: 4.8rem 0 6rem;
+    text-align: center;
+}
+
+.reviews__title {
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #fff;
+    text-transform: lowercase;
+}
+
+.reviews__inner {
+    margin-top: 5.3rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.reviewer {
+    max-width: 21rem;
+}
+
+@media (max-width: 76rem) {
+    .reviewer {
+        margin-bottom: 4rem;
+    }
+
+    .reviewer:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.reviewer__photo {
+    margin-bottom: 2rem;
+    border-radius: 50%;
+}
+
+@media (max-width: 76rem) {
+    .reviewer__photo {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.reviewer__name-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1.3rem;
+}
+
+@media (max-width: 76rem) {
+    .reviewer__name-container {
+        margin-bottom: 0.6rem;
+    }
+}
+
+.reviewer__name {
+    display: inline-block;
+    font-family: 'Galiver sans';
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.reviewer__text {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* footer */
+.footer {
+    max-width: 100%;
+    min-height: 42rem;
+    background: #2c2c2c url(../img/footer-lg.jpg) no-repeat;
+    background-position-x: 33%;
+    background-position-y: 69%;
+    background-size: 132%;
+}
+
+@media (max-width: 62rem) {
+    .footer {
+        background-position-x: 45%;
+        background-position-y: 45%;
+    }
+}
+
+@media (max-width: 40rem) {
+    .footer {
+        background-position-x: 56%;
+        background-size: 220%;
+    }
+}
+
+.footer__inner {
+    padding: 6rem 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 60rem) {
+    .footer__inner {
+        padding: 2rem 3rem;
+    }
+}
+
+.footer__item {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 48rem;
+    max-width: 48rem;
+    min-height: 29rem;
+    padding: 0 4.7rem;
+    background-color: rgba(44, 44, 44, 0.8);
+}
+
+@media (max-width: 103rem) {
+    .footer__item {
+        min-width: 49%;
+        max-width: 40rem;
+    }
+}
+
+@media (max-width: 89rem) {
+    .footer__item {
+        min-width: 49%;
+        max-width: 29rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    .footer__item {
+        min-width: 32rem;
+        min-height: 23rem;
+        padding: 0 2rem 0 4rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 33rem) {
+    .footer__item {
+        min-width: 29rem;
+        min-height: 20rem;
+        padding: 0 2rem 0 4rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 29rem) {
+    .footer__item {
+        min-width: 25rem;
+        min-height: 20rem;
+        padding: 0 2rem 0 4rem;
+        font-size: 1.5rem;
+    }
+}
+
+.delivery__title-container {
+    margin-bottom: 2rem;
+}
+
+.delivery__title {
+    font-family: 'Galiver sans';
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+
+@media (max-width: 89rem) {
+    .delivery__title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    .delivery__title {
+        font-size: 1.5rem;
+    }
+}
+
+.delivery__text {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+@media (max-width: 89rem) {
+    .delivery__text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    .delivery__text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .delivery__text {
+        font-size: 0.8rem;
+    }
+}
+
+.signboard {
+    margin-bottom: 3rem;
+}
+
+.signboard:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 33rem) {
+    .signboard {
+        margin-bottom: 1rem;
+    }
+}
+
+.signboard__title {
+    margin-bottom: 1.5rem;
+    font-family: 'Galiver sans';
+    font-size: 3.3rem;
+    font-weight: 400;
+}
+
+@media (max-width: 103rem) {
+    .signboard__title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 89rem) {
+    .signboard__title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 29rem) {
+    .signboard__title {
+        font-size: 1.7rem;
+    }
+}
+
+.signboard__insta-container {
+    display: flex;
+}
+
+.signboard__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.signboard__link-title {
+    margin-left: 0.5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 29rem) {
+    .signboard__link-title {
+        font-size: 1.6rem;
+    }
+}
